@@ -21,6 +21,7 @@ setup_interface () {
 
 	for i in $router; do
 		proto_add_ipv4_route 0.0.0.0 0 "$i"
+		route add -net 0.0.0.0/0 gw "$i"
 	done
 
 	# CIDR STATIC ROUTES (rfc3442)
